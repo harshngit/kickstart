@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes dropdownAccordion {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scaleY(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+.dropdown-panel {
+  animation: dropdownAccordion 0.35s ease forwards;
+  transform-origin: top center;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.marquee-track {
+  animation: marqueeScroll 22s linear infinite;
+}
+
+@keyframes wheelSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.marquee-wheel {
+  animation: wheelSpin 10s linear infinite;
+}
