@@ -177,7 +177,7 @@ export default function NavbarCustom() {
 
                   {hasChildren && open && (
                     <div className="fixed left-0 right-0 top-[90px] z-[100] hidden pt-6 lg:block">
-                      <div className="dropdown-panel mx-auto w-full rounded-[40px] border border-black/10 bg-white px-6 py-10 shadow-[0_40px_80px_rgba(15,23,42,0.12)] md:px-16 lg:px-24">
+                      <div className="dropdown-panel mx-auto w-full rounded-b-[40px] border border-black/10 bg-white px-6 py-10 shadow-[0_40px_80px_rgba(15,23,42,0.12)] md:px-16 lg:px-24">
                         <div className="flex flex-col gap-12 lg:flex-row">
                           <div className="lg:basis-[40%]">
                             <p className="text-xs uppercase tracking-[0.4em] text-black/40">{item.label}</p>

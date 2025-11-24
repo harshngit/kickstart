@@ -40,7 +40,7 @@ const HomeBanner = () => {
   return (
     <section
       ref={sectionRef}
-      className="sticky top-0 isolate z-10 flex min-h-[100vh] flex-col items-center justify-between overflow-visible rounded-b-[40px] bg-white px-4 pb-16 pt-36 sm:px-10 lg:px-0"
+      className="sticky top-0 isolate z-10 flex lg:min-h-[100vh] flex-col items-center justify-between overflow-visible rounded-b-[40px] bg-white px-4 pb-16 pt-36 sm:px-10 lg:px-0"
     >
       <div ref={contentRef} className="mx-auto w-full mt-[100px] flex flex-col items-start justify-end">
         <h1 className="mt-6 text-[32px] font-semibold leading-[1.1] text-black sm:text-[54px] lg:text-[64px]">
