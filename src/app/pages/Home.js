@@ -7,6 +7,7 @@ import Footer from '@/components/Layout/Footer.js'
 import HomeBanner from '@/components/Home/HomeBanner'
 import ParallaxShowcase from '@/components/Home/ParallaxShowcase'
 import DefineUsSection from '@/components/Home/DefineUsSection'
+import ShowCase from '@/components/Home/ShowCase'
 
 const Home = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -18,6 +19,7 @@ const Home = () => {
         <HomeBanner />
         <ParallaxShowcase />
         <DefineUsSection />
+        <ShowCase />
         {/* <Footer /> */}
       </div>
     </>

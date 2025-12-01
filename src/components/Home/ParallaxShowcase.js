@@ -102,7 +102,7 @@ const ParallaxShowcase = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative isolate z-20 overflow-visible pt-24 h-[100vh]">
+    <section ref={sectionRef} data-parallax-section className="relative isolate z-20 overflow-visible pt-24 h-[100vh]">
       
 
     

@@ -15,7 +15,7 @@ const HomeBanner = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      if (!contentRef.current) return;
+      if (!contentRef.current || !sectionRef.current) return;
 
       gsap.fromTo(
         contentRef.current,
@@ -32,6 +32,29 @@ const HomeBanner = () => {
           },
         }
       );
+
+      // Wait for ParallaxShowcase to be available, then hide banner when it passes
+      const setupHideAnimation = () => {
+        const parallaxSection = document.querySelector('[data-parallax-section]');
+        if (parallaxSection) {
+          gsap.to(sectionRef.current, {
+            opacity: 0,
+            y: -50,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: parallaxSection,
+              start: "bottom top",
+              end: "bottom top+=200",
+              scrub: true,
+            },
+          });
+        } else {
+          // Retry after a short delay if element not found
+          setTimeout(setupHideAnimation, 100);
+        }
+      };
+
+      setupHideAnimation();
     }, sectionRef);
 
     return () => ctx.revert();
@@ -40,7 +63,7 @@ const HomeBanner = () => {
   return (
     <section
       ref={sectionRef}
-      className="sticky top-0 isolate z-10 flex lg:min-h-[100vh] flex-col items-center justify-between overflow-visible rounded-b-[40px] bg-white px-4 pb-16 pt-36 sm:px-10 lg:px-0"
+      className="sticky top-0 isolate z-0 flex lg:min-h-[100vh] flex-col items-center justify-between overflow-visible rounded-b-[40px] bg-white px-4 pb-16 pt-36 sm:px-10 lg:px-0"
     >
       <div ref={contentRef} className="mx-auto w-full mt-[100px] flex flex-col items-start justify-end">
         <h1 className="mt-6 text-[32px] font-semibold leading-[1.1] text-black sm:text-[54px] lg:text-[64px]">
